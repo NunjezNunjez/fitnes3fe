@@ -1,42 +1,185 @@
+:root {
+    --primary-color: #5D8736;  /* Temno zelena */
+    --secondary-color: #809D3C; /* Srednje zelena */
+    --accent-color: #A9C46C;   /* Svetlo zelena */
+    --light-color: #F4FFC3;    /* Zelo svetlo zelena */
+    --dark-color: #3A4A2B;     /* Temno zelena za tekst */
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+}
+
+/* ===================== */
+/* MODERN HEADER STYLES */
+/* ===================== */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.8rem;
+    color: white !important;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand::before {
+    content: "💪";
+    margin-right: 0.8rem;
+    font-size: 1.4rem;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+    font-weight: 600;
+    font-size: 1.05rem;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+    border-radius: 6px;
+}
+
+.nav-link:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Odjava gumb */
+.btn-logout {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.btn-logout:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Indikator aktivne strani */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: var(--light-color);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+    width: 60%;
+}
+
+/* ===================== */
+/* OSTALI STILI (ohranjeni) */
+/* ===================== */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #9B9496;
+    background-color: #f8f9fa;
+    color: var(--dark-color);
+    line-height: 1.6;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
-
-.navbar {
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin: 2rem auto 0;
 }
 
 .card {
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    background: white;
+    overflow: hidden;
+    margin-bottom: 2rem;
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
-.form-group {
-    margin-bottom: 1rem;
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 0.7rem 1.8rem;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: white;
+    letter-spacing: 0.5px;
 }
 
-.alert {
-    margin-top: 20px;
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.btn {
-    margin-right: 5px;
-}
+/* Responsive - samo za mobilne naprave */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem;
+    }
 
-.list-group-item {
-    margin-bottom: 10px;
-    border-radius: 5px;
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem !important;
+    }
+
+    .btn-logout {
+        padding: 0.5rem 1rem !important;
+        margin-left: 0.5rem;
+    }
 }
