@@ -12,7 +12,7 @@ const Domov = () => {
                     <div className="card feature-card">
                         <div className="feature-icon">💪</div>
                         <h3 className="feature-title">Treningi</h3>
-                        <p>Upravljajte s svojimi treningi. Dodajajte nove, urejajte ali brišite obstoječe.</p>
+                        <p>Upravljajte s svojimi treningi. Dodajajte nove ali brišite obstoječe.</p>
                         <Link to="/treningi" className="btn btn-primary mt-3">Pojdi na treninge</Link>
                     </div>
                 </div>
