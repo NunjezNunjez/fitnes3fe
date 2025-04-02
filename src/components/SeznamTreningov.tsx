@@ -46,7 +46,6 @@ const SeznamTreningov: React.FC = () => {
     return (
         <div className="container">
             <h2>Seznam treningov</h2>
-            <Link to="/treningi/dodaj" className="btn btn-success mb-3">Dodaj nov trening</Link>
 
             {treningi.length === 0 ? (
                 <div className="alert alert-warning">Ni treningov</div>
@@ -63,8 +62,11 @@ const SeznamTreningov: React.FC = () => {
                                     </h5>
                                     <p className="mb-1">
                                         <strong>Trajanje:</strong> {trening.trajanje} minut<br />
-                                        <strong>Vaje:</strong> {trening.vaje.map(v => v.naziv).join(', ')}
+                                        <strong>Vaje:</strong> {trening.vaja && trening.vaja.length > 0
+                                        ? trening.vaja.map((v: { naziv: any; }) => v.naziv).join(', ')
+                                        : 'Ni določene vaje'}
                                     </p>
+
                                     {trening.opomba && (
                                         <p className="mb-1"><strong>Opomba:</strong> {trening.opomba}</p>
                                     )}

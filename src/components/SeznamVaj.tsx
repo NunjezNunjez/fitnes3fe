@@ -46,7 +46,6 @@ const SeznamVaj: React.FC = () => {
     return (
         <div className="container">
             <h2>Seznam vaj</h2>
-            <Link to="/vaje/dodaj" className="btn btn-success mb-3">Dodaj novo vajo</Link>
 
             {vaje.length === 0 ? (
                 <div className="alert alert-warning">Ni vaj</div>

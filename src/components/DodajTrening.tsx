@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { dodajTrening, pridobiVseVaje } from '../services/api';
-import { Trening, Vaja } from '../types/types';
+import { Vaja } from '../types/types';
 
 const DodajTrening: React.FC = () => {
     const [trajanje, setTrajanje] = useState<number>(30);
@@ -30,7 +30,7 @@ const DodajTrening: React.FC = () => {
                 trajanje,
                 opomba,
                 datum,
-                vaje: izbraneVaje.map(id => ({ id } as Vaja)),
+                vajaIDs: izbraneVaje,
             });
             navigate('/treningi');
         } catch (error) {

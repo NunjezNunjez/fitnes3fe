@@ -21,7 +21,7 @@ const Registracija: React.FC = () => {
             await axios.post('http://localhost:3000/auth/register', {
                 name,
                 email,
-                password
+                geslo: password
             });
             navigate('/login');
         } catch (err) {

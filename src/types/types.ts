@@ -9,7 +9,7 @@ export interface Trening {
     trajanje: number; // v minutah
     opomba: string;
     datum: string; // ISO format datuma
-    vaje: Vaja[];
+    vajaIDs: number[];
 }
 
 export interface Uporabnik {
