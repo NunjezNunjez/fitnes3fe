@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #d1a937;  /* Temno zelena */
-    --secondary-color: #809D3C; /* Srednje zelena */
-    --accent-color: #A9C46C;   /* Svetlo zelena */
-    --light-color: #F4FFC3;    /* Zelo svetlo zelena */
-    --dark-color: #3A4A2B;     /* Temno zelena za tekst */
+    --primary-color: #d1a937;
+    --secondary-color: #809D3C;
+    --accent-color: #A9C46C;
+    --light-color: #F4FFC3;
+    --dark-color: #3A4A2B;
     --success-color: #76b384;
     --danger-color: #dc3545;
 }
@@ -110,9 +110,7 @@
     width: 60%;
 }
 
-/* ===================== */
-/* OSTALI STILI (ohranjeni) */
-/* ===================== */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f9fa;
