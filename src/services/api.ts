@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Vaja, Trening, Uporabnik } from '../types/types';
 
-const API_URL = 'http://localhost:3000'; // prilagodi glede na tvoj backend URL
+const API_URL = 'http://localhost:3000';
 
 const api = axios.create({
     baseURL: API_URL,
@@ -10,7 +10,7 @@ const api = axios.create({
     },
 });
 
-// Dodaj interceptor za dodajanje JWT tokena
+//interceptor za dodajanje JWT tokena
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token && config.headers) {
